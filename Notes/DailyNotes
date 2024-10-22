@@ -47,3 +47,25 @@ DisAdv Selenium :
 ===============================
 Maven Project 
 Maven -Build Management tool 
+
+
+Selenium WebDriver + java 
+
+Automation Script - Test cases stpes convert code 
+
+Selenium Architecure :
+
+------------------------
+
+Search context (I)-extends--WebDriver (I)--implements --RemoteWebDriver (C) --extends-ChromiumDriver (C)--ChromeDriver (C)/EdgeDriver(C) multiple Browser driver classes 
+
+
+
+
+
+
+
+
+
+
+
