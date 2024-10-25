@@ -114,6 +114,33 @@ DOM - Document Object model
 
 Task Url : https://demo.guru99.com/test/newtours/register.php
 
+==================================
+Locator :Id/Name
+
+Id/name 
+
+Xpath Locator :
+-------------------
+Absolute xpath :(/)
+Navigation start from parent node navigate to immidiate child 
+1
+2
+3
+3.5
+4
+5
+Ele
+Xpath --- lengthly 
+UI changes -- Absolute xpath expression collpse
+
+
+WebElement email=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[1]/div[1]/input"));
+email.sendKeys("Test");
+
+
+Relative XPath
+
+
 
 
 
