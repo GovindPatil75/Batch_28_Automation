@@ -138,9 +138,49 @@ WebElement email=driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/di
 email.sendKeys("Test");
 
 
-Relative XPath
-
-
+Relative XPath (//)
+-----------------
+Element --- parent node any child node navigation 
+        ---child node 
+        
+        DOM ---
+           tagname : anything after <
+             ex. <input
+                 <div
+                 <a
+                 <li
+                 <br
+           attribute name
+           attribute value
+           Ex .
+           attribute name="attribute value"
+           name="login"
+           value="1"
+           
+           text : >define<
+                ex . >Forgotten password?<
+                
+    a.Xpath By Attribute :
+    ----------------------
+    //tagname[@attributename='attribute value']
+    //input[@id='email']
+    
+    WebElement Email=driver.findElement(By.xpath("//input[@id='email']"));
+    Email.sendKeys("Test@gmail.com");
+    
+    
+    
+    b.Xpath By text() :
+    -------------------
+    //tagname[text()='text value']
+    //a[text()='Forgotten password?']
+    
+    WebElement FP=driver.findElement(By.xpath("//a[text()='Forgotten password?']"));
+    FP.click();
+    
+    
+    c.Xpath By contains()
+    d.Xpath By Index             
 
 
 
