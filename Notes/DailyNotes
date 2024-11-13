@@ -180,13 +180,29 @@ Element --- parent node any child node navigation
     
     
     c.Xpath By contains()
-    d.Xpath By Index             
+    ----------------------------
+    //tagname[contains(@attributename,'static value')]
+    
+    WebELement element=driver.findElement(By.xpath("//button[contains(@id,"u_0_9")]"));
+    
+    //tagname[contains(text(),'partial value text')]
+    
+    WebElement element=driver.findElement(By.xpath("//a[contains(text(),'Forgotten ')]"));
+    
+    d.Xpath By Index  
+    ------------------------------
+    (xpath expression)[index]
+    
+    WebElement element=driver.findElement(By.xpath("(//input[@type='text'])[2]"));         
 
+============================================
+How to handle dropdown 
 
+Select class ---- dropdown element tagname select 
 
-
-
-
+WebElement country=driver.findElement(By.xpath("Xpath expression"));
+Select select=new Select(country);
+select.selectByindex(10);
 
 
 
