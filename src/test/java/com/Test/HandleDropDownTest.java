@@ -2,6 +2,8 @@ package com.Test;
 
 
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,12 +25,36 @@ public class HandleDropDownTest {
         WebElement country=driver.findElement(By.xpath("//select[@name='country']"));
         
         Select select=new Select(country);
+//        
+//        select.selectByIndex(10);
+//        
+//        select.selectByValue("INDIA");
+//        
+//        select.selectByVisibleText("INDIA");
+//        
         
-       // select.selectByIndex(10);
+       // Library.handleDropDown(country, "INDIA");
+        List<WebElement> list=select.getOptions();
         
-       // select.selectByValue("BAHRAIN");
+        int count=list.size();
+        System.out.println(count); // 264
         
-        select.selectByVisibleText("INDIA");
+        for(int i=0;i<count;i++) {
+        	
+        	String dropdownoption=list.get(i).getText();
+        	System.out.println(dropdownoption);
+        	
+        	if(dropdownoption.equals("GABON")) {
+        		list.get(i).click();
+        		break;
+        	}
+        }
+        
+        
+        
+        
+        
+        
 	}
 
 }
