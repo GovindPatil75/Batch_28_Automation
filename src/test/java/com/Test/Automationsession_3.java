@@ -1,5 +1,6 @@
 package com.Test;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.WebDriver.Window;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,6 +32,8 @@ public class Automationsession_3 {
 		//driver.close(); // current window close
 		
 		driver.quit(); // current window + All open window Close
+	
+		
 	}
 
 }

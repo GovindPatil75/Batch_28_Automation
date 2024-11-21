@@ -263,13 +263,58 @@ public class ScreenshotcaptureTest {
 	}
 
 }
+==============================================
+pop handle in selenium 
+
+Alert --? 
+
+Simple Alert :
+warning message /notification 
+Prompt Alert :
+user input accept 
+Confirmation Alert :
+confirmation message -- Yes 
 
 
+Alert alt=driver.switchto().alert();
 
+alt.gettext();
+alt.accept(); // click OK button 
 
+alt.dismiss(); // click Cancel button 
 
+alt.sendKeys("Test");
 
+WebDriverManager.chromedriver().setup();
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://demo.guru99.com/test/delete_customer.php");
+        driver.manage().window().maximize();
+        
+        
+        driver.findElement(By.xpath("//input[@name='cusid']")).sendKeys("12345678");
+        driver.findElement(By.xpath("//input[@name='submit']")).click();
+        
+        //Alert -Handle 
+        Alert alt=driver.switchTo().alert();
+        String Textonalert=alt.getText();
+        System.out.println(Textonalert);
+        
+      //  alt.dismiss(); // click Cancel button 
+        alt.accept(); // click Ok button 
+        
+        
+        String TextonAlert=alt.getText();
+        System.out.println(TextonAlert);
+        alt.accept();
+        
+        
+        //alt.sendKeys("Test");
+       // alt.accept();
 
+        Library.handleAlert(driver).getText();
+        Library.handleAlert(driver).accept();
+        Library.handleAlert(driver).dismiss();
+        
 
 
 
