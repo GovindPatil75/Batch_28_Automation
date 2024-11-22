@@ -315,7 +315,43 @@ WebDriverManager.chromedriver().setup();
         Library.handleAlert(driver).accept();
         Library.handleAlert(driver).dismiss();
         
+===============================
+Scrolling
 
+JavaScriptExecutor js=driver
+//top-bottom
+js.executeScript("window.ScrollBy(0,300)","");
+
+//bottom-top
+js.executeScript("window.ScrollBy(0,-300)","");
+
+pixel
+
+Webelement
+
+WebDriverManager.chromedriver().setup();
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://demo.guru99.com/test/newtours/register.php");
+		driver.manage().window().maximize();
+		
+		//Scrolling -pixel
+		JavascriptExecutor js=driver;
+		//top-bottom
+		js.executeScript("window.scrollBy(0,300)", "");
+		
+		Thread.sleep(3000); // 3 second 
+		
+		//bottom-top
+		js.executeScript("window.scrollBy(0,-300)", "");
+		
+		Thread.sleep(3000); // 3 second 
+		
+		//Scrolling -WebElement 
+		WebElement Submit=driver.findElement(By.xpath("//input[@name='submit']"));
+		js.executeScript("arguments[0].scrollIntoView();", Submit);
+		
+		
+		//Library.scrolltoElement(driver, Submit);
 
 
 
