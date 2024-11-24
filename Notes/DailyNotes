@@ -356,6 +356,28 @@ WebDriverManager.chromedriver().setup();
 js.executeScript("window.scrollBy(0,document.body.scrollHeight)
 document.body.scrollHeight - max scroll pixel size 
 
+==============================================
+
+How to send Testdata from excelsheet
+
+Apache POI -Dependancy -pom.xml 
+Common
+ooxml
+
+String Path="location";
+FileInutStream file=new FileInputStream(Path);
+XSSFWorkbook wb=new XSSFWorkbook(file);
+String data=wb.getsheet("Sheet1").getrow(0).getcell(4).getstringcellvalue();
+driver.findElement(By.xpath("")).sendKeys(data);
+
+
+
+
+
+
+
+
+
 
 
 
