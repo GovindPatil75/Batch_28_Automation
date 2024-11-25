@@ -1,0 +1,46 @@
+Abstract class, interface ?
+How to data fetch data from test data and Also Column tow & row number 3 ? 3,3 
+FileInputSTream file=new FileInputSTream("Excel path");
+XSSFWorkbook wb=new XSSFWorkbook(file);
+wb.getsheet("")
+
+Alert pop-up ?
+Children browser pop-up ?
+Windows popup?
+Robot fram work?
+How to get  the data from excel sheet?
+Hes asked about local  path abiut jar file?
+ Syntax Oops concepts
+Syntax ok takescreen shot?
+Asking abt string operation?
+Segregate lower case & uppercase?
+Asking about parents expath?
+Count for that same program?
+Hard & soft assertion?
+Different type of testing? Fb page forget password link find xpath?
+Run time Polymorphism?
+Prototype of default constructor?
+Example of Priority & low  severity?
+Webpage listbox scenarios?
+Pom classes how its good for us?
+Local variable?
+Looop use with list webelement?
+Multiple windows handles?
+Type of xpath?
+Loacal variable where it is store in which memory?
+Jankins tool how to execute the test case?
+About selenium?
+Why we creat static method in utility class?
+Abstract class?
+About String pool area?
+About Array, arraylist?
+Frame inside fram how to handle?
+Different exception in selenium?
+Wht is object & class?
+Arraylist and linklist?
+Opps concepts?
+Chalanges while writing the script?
+Which one is fast locator?
+Where we use opps in frame work?
+Which model u hav work?
+Chalanges are faces in automation?
