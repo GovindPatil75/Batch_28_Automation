@@ -370,8 +370,61 @@ XSSFWorkbook wb=new XSSFWorkbook(file);
 String data=wb.getsheet("Sheet1").getrow(0).getcell(4).getstringcellvalue();
 driver.findElement(By.xpath("")).sendKeys(data);
 
+Task : 
 
-
+String path="C:\\Users\\Dell\\eclipse-workspace\\Batch28\\TestData\\Data.xlsx";
+        FileInputStream file=new FileInputStream(path);
+        XSSFWorkbook wb=new XSSFWorkbook(file);
+        
+       String data= wb.getSheet("Sheet1").getRow(0).getCell(0).getStringCellValue();
+	   System.out.println(data);
+	
+	   String data1=wb.getSheet("Sheet1").getRow(0).getCell(1).getStringCellValue();
+	   System.out.println(data1);
+	   
+	   
+	   //Browser Open
+	   WebDriverManager.chromedriver().setup();
+	   ChromeDriver driver=new ChromeDriver();
+	   driver.get("https://www.facebook.com/");
+	   driver.manage().window().maximize();
+	   
+	   driver.findElement(By.xpath("//input[@name='email']")).sendKeys(data);
+	   
+	   driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(data1);
+	
+=============================================
+String path="C:\\Users\\Dell\\eclipse-workspace\\Batch28\\TestData\\Data.xlsx";
+        FileInputStream file=new FileInputStream(path);
+        XSSFWorkbook wb=new XSSFWorkbook(file);
+        
+       String data= wb.getSheet("Sheet1").getRow(0).getCell(0).getStringCellValue();
+	   System.out.println(data);
+	
+	   String data1=wb.getSheet("Sheet1").getRow(0).getCell(1).getStringCellValue();
+	   System.out.println(data1);
+	   
+	   String Data4=wb.getSheet("Sheet1").getRow(0).getCell(2).getStringCellValue();
+	   System.out.println(Data4);
+	   
+//	   double data2=wb.getSheet("Sheet1").getRow(0).getCell(2).getNumericCellValue();
+//	   System.out.println(data2); //1.2345678E7
+//	   
+//	   String Data3=String.valueOf(data2); //1.2345678E7
+//	   
+//	   String Data4=Data3.replace(".", "").replace("E7", "");
+//	   System.out.println(Data4);
+	   
+	   //Browser Open
+	   WebDriverManager.chromedriver().setup();
+	   ChromeDriver driver=new ChromeDriver();
+	   driver.get("https://www.facebook.com/");
+	   driver.manage().window().maximize();
+	   
+	   driver.findElement(By.xpath("//input[@name='email']")).sendKeys(data);
+	   
+	   driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(data1);
+	
 
 
 
