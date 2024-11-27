@@ -424,6 +424,73 @@ String path="C:\\Users\\Dell\\eclipse-workspace\\Batch28\\TestData\\Data.xlsx";
 	   driver.findElement(By.xpath("//input[@name='email']")).sendKeys(data);
 	   
 	   driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(data1);
+====================================================
+Frame and Iframe 
+
+Frame : dev webpage vertically and horizontilly seprate 
+        frameset tag 
+        
+        deprecated from HTML5 
+        
+Iframe : inline frame .
+         Advetismnet /other source information         
+
+driver.switchto().frame(int index);
+driver.switchto().frame(String name /Id);
+driver.switchto().frame(WebElement element);
+
+
+	WebDriverManager.chromedriver().setup();
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://ui.vision/demo/webtest/frames/");
+		driver.manage().window().maximize();
+		
+		// Frame Handle 
+		
+	   driver.switchTo().frame(0); // Mainpage- Frame1
+	   WebElement text1=driver.findElement(By.xpath("//input[@name='mytext1']"));
+	   text1.sendKeys("Test123");
+	   
+	   driver.switchTo().defaultContent(); // Frame1- MainPage
+	   WebElement Frame2=driver.findElement(By.xpath("//frame[@src='frame_2.html']"));
+	   driver.switchTo().frame(Frame2); // Mainpage -- Frame2
+	   WebElement text2=driver.findElement(By.xpath("//input[@name='mytext2']"));
+	   text2.sendKeys("Test123");
+	   
+	   driver.switchTo().defaultContent(); // Frame2 -- Mainpage
+	   
+	   //mainpage--outterframe--innerframe
+	   
+	   driver.switchTo().frame(2); // Mainpage-- frame3outterframe
+	   driver.findElement(By.xpath("//input[@name='mytext3']")).sendKeys("Test123");
+	   
+	   WebElement innerframe=driver.findElement(By.tagName("iframe"));
+	   driver.switchTo().frame(innerframe); // outterframe--innerframe
+	   driver.findElement(By.xpath("(//div[@class='AB7Lab Id5V1'])[1]")).click();
+	   
+	   
+	   //innerframe--outterframe
+	   driver.switchTo().parentFrame(); 
+	   //ouuterframe-mainpage
+	   driver.switchTo().defaultContent();
+	   
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
 	
 
 
