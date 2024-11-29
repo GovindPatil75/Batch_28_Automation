@@ -474,6 +474,57 @@ driver.switchto().frame(WebElement element);
 	   //ouuterframe-mainpage
 	   driver.switchTo().defaultContent();
 	   
+	===================================================
+	TestNG -- Test Managment tool /Testng framework
+	          Test Next genration 
+	        
+	       @BeforeMethod   
+	       @Test  
+	       @AfterMethod 
+	       
+	       priority , invocationcount=2,enabled=false,dependsonMethod
+	       groups 
+	       
+	       15 TC --- Functional Test -- PO review -- classify 3 CR 2 Regression -Automate
+	       
+	       minor release -- Mini Regression suite -CR -- 40 
+	       Major release -- Regression suite - R +CR 
+	       
+	       100 --- 60 R -- 40 CR 
+	       
+	       Runner file --- testng.xml ---> Add Test class 
+	       
+	       CrossBrowser Test --- @Parameter --->
+	       
+	       testng.xml -- include /exclude
+	       
+	       Report : emailable report/index.html 
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	       
+	
+	
+	
+	
+	
+	
+	
+	
+	   
+	   
 	
 	
 

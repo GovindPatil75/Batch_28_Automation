@@ -24,6 +24,8 @@ public class AlertHandleTest {
         String Textonalert=alt.getText();
         System.out.println(Textonalert);
         
+        driver.close();
+        
         
 	}
 
