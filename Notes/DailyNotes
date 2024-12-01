@@ -500,8 +500,83 @@ driver.switchto().frame(WebElement element);
 	       
 	       Report : emailable report/index.html 
 	       
-	       
-	       
+	=======================================================
+	
+	@BeforeSuite   
+	public void BS() {
+	      
+	}   
+	@BeforeTest
+	@BeforeClass
+	@BeforeMethod
+	
+	@Test
+	public void Test1(){
+	
+	 //
+	}
+	
+	@AfterMethod
+	@AfterClass
+	@AfterTest
+	@AfterSuite
+	
+	 ==================================================      
+	   package com.Test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Testng_session_1 {
+
+	ChromeDriver driver;
+
+	@BeforeMethod
+	public void BrowserLaunch() {
+		
+		WebDriverManager.chromedriver().setup();
+		driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+	}
+	
+	@Test
+	public void LoginTest() {
+		
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Test123");
+		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("12345678");
+		driver.findElement(By.xpath("//button[@name='login']")).click();
+	}
+	
+	@Test
+	public void LoginTest_1() {
+		
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Test123");
+		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("12345678");
+		driver.findElement(By.xpath("//button[@name='login']")).click();
+	}
+	
+	@Test
+	public void LoginTest_2() {
+		
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Test123");
+		driver.findElement(By.xpath("//input[@id='pass']")).sendKeys("12345678");
+		driver.findElement(By.xpath("//button[@name='login']")).click();
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		
+		driver.close();
+	}
+	
+
+}
 	       
 	       
 	       
