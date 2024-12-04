@@ -645,6 +645,111 @@ public class Testng_session_keyword {
 </suite> <!-- DemoSuite -->
 
 =============================================================
+groups
+
+feature TC --- 10 --- Peer review --12 TC ---Feature Test 
+
+--RD --Test Report /TC Review PO -- classify TC  2 TC _CR/3 TC_R/Client demo 
+
+----major /minor rlease 
+
+
+Regression --60
+Critical Regression --40
+
+TC -100 
+================================================
+
+	@Test(groups= {"Critical Regression"})
+	public void m1() {
+		System.out.println("Test M1");
+	}
+	
+	@Test(groups= {"Regression"})
+	public void m2() {
+		System.out.println("Test M2");
+	}
+	
+	@Test(groups= {"Regression"})
+	public void m3() {
+		System.out.println("Test M3");
+	}
+	
+	
+
+}
+=================
+@Test(groups= {"Critical Regression"})
+	public void a1() {
+		System.out.println("Test A1");
+	}
+	
+	@Test(groups= {"Critical Regression"})
+	public void a2() {
+		System.out.println("Test A2");
+	}
+	
+	@Test(groups= {"Regression","Critical Regression"})
+	public void a3() {
+		System.out.println("Test A3");
+	}
+	
+	@Test(groups= {"Regression"})
+	public void a4() {
+		System.out.println("Test A4");
+	}
+	
+	===========================================
+	<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<groups>
+<run>
+<include name="Critical Regression"></include>
+</run>
+</groups>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.Test.Testng_groups"/>
+      <class name="com.Test.Testng_groups1"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+	
+	=============================================
+	<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RegressionSuite">
+<groups>
+<run>
+<include name="Regression"></include>
+</run>
+</groups>
+  <test thread-count="5" name="RegressionTest">
+    <classes>
+      <class name="com.Test.Testng_groups"/>
+      <class name="com.Test.Testng_groups1"/>
+    </classes>
+  </test> <!-- RegressionTest -->
+</suite> <!-- RegressionSuite -->
+	===========================================
+	Master Suite  : 
+	
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MasterSuite">
+  <test thread-count="5" name="MasterTest">
+    <classes>
+      <class name="com.Test.Testng_groups"/>
+      <class name="com.Test.Testng_groups1"/>
+    </classes>
+  </test> <!-- MasterTest -->
+</suite> <!-- MasterSuite -->
+	
+	
+	
+	
 
 
 
