@@ -747,6 +747,75 @@ TC -100
   </test> <!-- MasterTest -->
 </suite> <!-- MasterSuite -->
 	
+=====================================================
+BaseClass
+
+WebDriver driver;
+	
+	
+	@Parameters("BrowserName")
+	@BeforeMethod
+	public void setUp(String BrowserName) {
+		
+		if(BrowserName.equalsIgnoreCase("Chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver=new ChromeDriver();
+		}
+		
+		else if(BrowserName.equalsIgnoreCase("Edge")) {
+			
+			WebDriverManager.edgedriver().setup();
+			driver=new EdgeDriver();
+		}
+		
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		
+	}
+
+	
+	@AfterMethod
+	public void tearDown() {
+		
+		//driver.close();
+	}
+}
+
+
+Test Class
+==================
+public class LoginTest extends BaseClass{
+	
+	
+	@Test
+	public void verifyLoginTest() {
+		
+		driver.findElement(By.xpath("//input[@id='email']")).sendKeys("Test");
+	}
+
+}
+
+
+XML file 
+==================
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CrossBrowserSuite">
+  <test thread-count="5" name="CrossBrowserTest_chrome">
+  <parameter name="BrowserName" value="Chrome"></parameter>
+    <classes>
+      <class name="com.CrossBrowserTest.LoginTest"/>
+    </classes>
+  </test> <!-- CrossBrowserTest -->
+  
+  <test thread-count="5" name="CrossBrowserTest_Edge">
+  <parameter name="BrowserName" value="Edge"></parameter>
+    <classes>
+      <class name="com.CrossBrowserTest.LoginTest"/>
+    </classes>
+  </test> <!-- CrossBrowserTest -->
+</suite> <!-- CrossBrowserSuite -->
 	
 	
 	
