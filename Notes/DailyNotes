@@ -817,6 +817,81 @@ XML file
   </test> <!-- CrossBrowserTest -->
 </suite> <!-- CrossBrowserSuite -->
 	
+==========================================================
+Assert (Hard Assert)
+------------------
+Verify result of an Operation
+Assert.assertequals(Actaul,Expected); // Pass/fail
+when Assert fail --- next test case steps execution abort 
+-- no need to call AssertAll method
+
+@Test
+	public void TC_001() {
+		
+		System.out.println("Browser Open");
+		System.out.println("valid Email Id");
+		System.out.println("valid Password ");
+		System.out.println("Click Login Button");
+		
+		//verify
+		String Expected="ABC";
+		
+		//driver.getTitle();
+		String Actual="ABC"; // Homepage page
+		
+		Assert.assertEquals(Actual, Expected);
+		
+		System.out.println("Test Demo");
+		
+	
+
+Soft Assert (Verify)
+---------------------
+Verify result of an Operation
+we need to create Object of Soft Assert class
+SoftAssert soft=new SoftAssert();
+soft.Assertequals(Actual,Expected); // Pass /Fail
+soft.assertAll(); // Exception -Bucket --Ommit --console
+
+System.out.println("Browser Open");
+		System.out.println("Email");
+		System.out.println("Password");
+		System.out.println("Login Button");
+		
+		//verify
+		
+		SoftAssert soft=new SoftAssert();
+		String Expected="Test1";
+		String Actual="Test";
+		
+		soft.assertEquals(Actual, Expected);
+		soft.assertTrue(false);
+		
+		System.out.println("Test demo");
+		System.out.println("Test Bug");
+		
+		soft.assertAll();
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 
