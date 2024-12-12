@@ -871,7 +871,49 @@ System.out.println("Browser Open");
 		System.out.println("Test Bug");
 		
 		soft.assertAll();
+============================================
+Actions : Mouse movement and keyboard Action
+
+Actions act=new Actions(driver);
+
+//mouse hover +click () 
+
+//Browser Open
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
 		
+		//Element --mouseHover + Click
+		
+		Actions act=new Actions(driver);
+		WebElement FP=driver.findElement(By.xpath("//a[text()='Forgotten password?']"));
+		act.moveToElement(FP).click().build().perform();
+		
+		
+//Right click+click (Element)	
+//DoubleClick
+
+//Browser Open
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demo.guru99.com/test/simple_context_menu.html");
+		driver.manage().window().maximize();
+		
+		// Right click +click (WebElement)
+		
+		Actions act=new Actions(driver);
+		//WebElement RCE=driver.findElement(By.xpath("//span[text()='right click me']"));
+		//WebElement quit=driver.findElement(By.xpath("//span[text()='Quit']"));
+		
+		//act.contextClick(RCE).click(quit).build().perform();
+		
+		//double click 
+		WebElement DCE=driver.findElement(By.xpath("//button[text()='Double-Click Me To See Alert']"));
+		act.doubleClick(DCE).build().perform();
+		
+		driver.quit();
+					
 		
 
 
