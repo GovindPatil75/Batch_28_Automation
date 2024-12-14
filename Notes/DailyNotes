@@ -913,6 +913,48 @@ Actions act=new Actions(driver);
 		act.doubleClick(DCE).build().perform();
 		
 		driver.quit();
+		
+	===============================================
+	
+	Actions act=new Actions(driver);
+	act.dragandDrop(srcelement,detnelement).build().perform();
+	
+	
+	WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		
+		//Email ---UpperCase -Keyboard -Value 
+		
+		Actions act=new Actions(driver);
+		
+		WebElement Email=driver.findElement(By.xpath("//input[@id='email']"));
+		
+		act.keyDown(Email, Keys.SHIFT).sendKeys("bugspotter").keyUp(Keys.SHIFT).build().perform();
+		
+		
+		//ctrl+a
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
+		//ctrl+c
+		
+		act.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).build().perform();
+		//element hit
+		driver.findElement(By.xpath("//input[@id='pass']")).click();
+		
+		//ctrl+v
+		act.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+		
+		
+	
+	
+	
+	
+	
+	
+		
+		
+		
 					
 		
 
