@@ -945,6 +945,113 @@ Actions act=new Actions(driver);
 		//ctrl+v
 		act.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
 		
+====================================================
+
+POM (Page Object Model) with PageFactory 
+
+
+webpage -- 10 webpage --Webelement -- 10 Pom Class
+design pattern -- Element repo
+
+Login Webpage --- LoginPom Class 
+HomePage webpage --- HomePagePom Class
+
+Test Class -- Pom Class ---initilize --Test class
+PageFactory Class
+iniElements();
+
+========================================
+//Encapsulation = 
+	//define
+	
+	@FindBy(how=How.XPATH,using="//input[@id='email']")
+	private WebElement Email;
+	
+	@FindBy(how=How.XPATH,using="//input[@name='pass']")
+	private WebElement password;
+	
+	
+	@FindBy(how=How.XPATH,using="//button[@name='login']")
+	private WebElement LoginBtn;
+
+   //public getter methods 
+	
+	public WebElement getEmail() {
+		return Email;
+	}
+
+
+	public WebElement getPassword() {
+		return password;
+	}
+
+
+	public WebElement getLoginBtn() {
+		return LoginBtn;
+	}
+
+
+--------------------------
+
+WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		
+		
+		LoginPom login=PageFactory.initElements(driver, LoginPom.class);
+		
+		//login.getEmail().sendKeys("Test@gmail.com");
+		//login.getPassword().sendKeys("12345678");
+		//login.getLoginBtn().click();
+		
+		Library.custom_SendKeys(login.getEmail(), "Test@gmail.com");
+	    Library.custom_SendKeys(login.getPassword(), "12345678");
+	    Library.custom_Click(login.getLoginBtn());
+	    
+	    ===============================
+	    
+	public static void custom_SendKeys(WebElement element,String Value) {
+		
+		if(element.isEnabled()) {
+			element.sendKeys(Value);
+		}else {
+			System.out.println("Element is not Enabled");
+		}
+		
+	}
+	
+	public static void custom_Click(WebElement element) {
+		
+		
+		if(element.isDisplayed()) {
+			element.click();
+		}else {
+			System.out.println("Element is not displayed");
+		}
+		
+	}    
+	    
+	    
+	    
+	    
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 	
 	
