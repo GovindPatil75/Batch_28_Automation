@@ -1032,7 +1032,86 @@ WebDriverManager.chromedriver().setup();
 		
 	}    
 	    
-	    
+	===================================
+	
+	driver.getwindowhandle(); // String -- parent window ID
+	
+	Set<String> AllId=driver.getwindowhandles();  // Set<String>  -- Parent window + Child window ID
+	
+	List<String> list=new ArrayList<String>(AllId);
+	
+	list.get(0); // parent window id
+	list.get(1); // Child Browser window id
+	
+	driver.switchto().window(list.get(1));
+	
+	// Element -- Actions 
+	===========================
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demo.guru99.com/popup.php");
+		driver.manage().window().maximize();
+		
+		//
+		String PID=driver.getWindowHandle(); // Parent window ID
+		System.out.println(PID);
+		
+		driver.findElement(By.xpath("//a[text()='Click Here']")).click();
+		
+		Set<String> AllID=driver.getWindowHandles(); // Parent window ID+ Child Window ID
+		System.out.println(AllID);
+		
+		List<String> list=new ArrayList<String>(AllID);
+		
+		String CWID=list.get(1); // Child Browser Window ID
+		System.out.println(CWID);
+		
+		driver.switchTo().window(CWID);
+		
+		driver.findElement(By.xpath("//input[@name='emailid']")).sendKeys("Test");
+		
+		//driver.close(); // Current browser window
+		
+		//driver.quit(); // current+All open window close
+		
+		driver.switchTo().window(PID);
+	
+	
+	===============================
+	
+	WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://demo.guru99.com/popup.php");
+		driver.manage().window().maximize();
+		
+		//
+		String PID=driver.getWindowHandle(); // Parent window ID
+		System.out.println(PID);
+		
+		driver.findElement(By.xpath("//a[text()='Click Here']")).click();
+		
+		Set<String> AllID=driver.getWindowHandles(); // Parent window ID+ Child Window ID
+		System.out.println(AllID);
+		
+		Iterator<String> IT=AllID.iterator();
+		
+		while(IT.hasNext()) {
+			
+			String ID=IT.next();
+			
+			if(!PID.equals(ID)) {
+			
+				driver.switchTo().window(ID);
+				driver.findElement(By.xpath("//input[@name='emailid']")).sendKeys("Test");
+				
+			}
+			
+		}
+		
+	
+	
+	
+	
 	    
 	    
 	    
