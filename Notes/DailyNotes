@@ -1108,7 +1108,43 @@ WebDriverManager.chromedriver().setup();
 			
 		}
 		
-	
+=======================================================
+
+QA1 
+QA2
+QA3
+QA4
+----------------
+Project work 	-- repository -- Github 
+
+TC --Automate -Push to Repo-git ---PR (Pull request) raise -- approved 
+-- TC script merge Main branch
+
+git -- download 
+
+https://git-scm.com/downloads
+==================================
+Repo -- access 
+
+Project --clone --local system 
+
+Open git bash cmd
+git clone projectUrl
+EX.https://github.com/GovindPatil75/Batch_28_Automation.git
+
+Import to the eclipse 
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 	
